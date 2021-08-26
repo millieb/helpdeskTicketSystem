@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const cors = require('cors');
 const bcrypt = require('bcrypt');
 
 const {sign} = require('jsonwebtoken');
 
 const { Users } = require('../models');
-router.use(cors())
+const { validateToken } = require("../middlewares/AuthMiddleware");
 
 router.post("/", async (req, res) => {
     const userData = {
@@ -31,7 +30,7 @@ router.post('/login', async (req, res) => {
 
     if (!user) res.json ({error: "User does not exist."});
     
-    bcrypt.compare(password, user.password).then((match) => {
+    bcrypt.compare(password, user.password).then(async (match) => {
         if (!match) res.json({error: "Wrong username and password combintation."});
 
         const accessToken = sign(
@@ -43,5 +42,8 @@ router.post('/login', async (req, res) => {
     });
 });
 
+router.get("/auth", validateToken, (req, res) => {
+    res.json(req.user);
+});
 
 module.exports = router;

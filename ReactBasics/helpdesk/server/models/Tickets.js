@@ -1,15 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
-    const Users = sequelize.define("Users", {
+    const Tickets = sequelize.define("Tickets", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        first_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        last_name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -17,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        password: {
+        company: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description: {
             type: DataTypes.STRING,
             allowNull: false
         }
@@ -29,5 +29,5 @@ module.exports = (sequelize, DataTypes) => {
         });
     }; */
 
-    return Users;
+    return Tickets;
 }

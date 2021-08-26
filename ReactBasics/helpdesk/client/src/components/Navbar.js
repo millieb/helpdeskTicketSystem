@@ -21,6 +21,16 @@ class Navbar extends Component {
             Register
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/createTicket" className="nav-link">
+            Create Ticket
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/profile" className="nav-link">
+            Profile
+          </Link>
+        </li>
       </ul>
     )
 

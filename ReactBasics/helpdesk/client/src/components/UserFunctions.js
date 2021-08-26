@@ -13,6 +13,19 @@ export const register = newUser => {
     });
 }
 
+export const createTicket = newTicket => {
+  return axios
+    .post('http://localhost:3001/tickets', {
+      title: newTicket.title,
+      email: newTicket.email,
+      company: newTicket.company,
+      description: newTicket.description
+  })
+    .then(response => {
+      console.log('Ticket Created');
+  });
+}
+
 /* export const userLogin = user => {
   return axios
     .post('http://localhost:3001/auth/login', {
