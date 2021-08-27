@@ -1,1 +1,7 @@
 https://github.com/ArjunAranetaCodes/Login-Register-with-MySQL-Express-ReactJS-NodeJS
+
+ReactJs List:
+https://www.youtube.com/watch?v=dYjdzpZv5yc
+
+Color Palette:
+https://www.canva.com/colors/color-palettes/window-tide/

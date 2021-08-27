@@ -85,3 +85,32 @@ html,
 span {
   color: red;
 }
+
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 16px;
+}
+
+th {
+  background: #41729f;
+  color: #ffffff;
+}
+
+td {
+  background-color: #c3e0e5;
+}
